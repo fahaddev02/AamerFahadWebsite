@@ -21,7 +21,7 @@ export default function WhatsAppOrderButton({
   quantity,
   variantName,
   productSlug,
-  whatsAppNumber = '+923001234567',
+  whatsAppNumber = '+923319235315',
 }: WhatsAppOrderButtonProps) {
   const handleWhatsAppOrder = () => {
     const cleanPhone = whatsAppNumber.replace(/[^0-9]/g, '');

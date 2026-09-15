@@ -67,7 +67,7 @@ export default function CheckoutPage() {
     // Phone validation
     const phoneClean = formData.customerPhone.replace(/[\s-]/g, '');
     if (!/^(\+92|0|92)[0-9]{9,11}$/.test(phoneClean)) {
-      setErrorMessage('Please enter a valid Pakistani phone number (e.g. 03001234567 or +923001234567).');
+      setErrorMessage('Please enter a valid Pakistani phone number (e.g. 03319235315 or +923319235315).');
       showToast('Please enter a valid Pakistani phone number.', 'error');
       return;
     }
@@ -164,7 +164,7 @@ export default function CheckoutPage() {
                   required
                   value={formData.customerPhone}
                   onChange={(e) => setFormData({ ...formData, customerPhone: e.target.value })}
-                  placeholder="03001234567"
+                  placeholder="03319235315"
                   className="w-full bg-white border border-zinc-200 rounded-xl px-3.5 py-3 text-xs focus:ring-2 focus:ring-brand-800 focus:outline-none font-mono"
                 />
               </div>

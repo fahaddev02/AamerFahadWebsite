@@ -161,7 +161,7 @@ export default function OrderSuccessClient({ id }: { id: string }) {
         </Link>
 
         <a
-          href={`https://wa.me/923001234567?text=${whatsappMsg}`}
+          href={`https://wa.me/923319235315?text=${whatsappMsg}`}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full sm:flex-1 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs text-center rounded-2xl shadow-md transition flex items-center justify-center gap-2"

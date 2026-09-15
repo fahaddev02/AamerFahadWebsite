@@ -7,7 +7,7 @@ interface WhatsAppFloatProps {
   phoneNumber?: string;
 }
 
-export default function WhatsAppFloat({ phoneNumber = '+923001234567' }: WhatsAppFloatProps) {
+export default function WhatsAppFloat({ phoneNumber = '+923319235315' }: WhatsAppFloatProps) {
   const cleanPhone = phoneNumber.replace(/[^0-9]/g, '');
   const defaultMessage = encodeURIComponent(
     'Assalam-o-Alaikum! I am visiting Aamer Fahad and have an inquiry regarding your products.'

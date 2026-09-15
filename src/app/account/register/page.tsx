@@ -99,7 +99,7 @@ export default function RegisterPage() {
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                placeholder="03001234567"
+                placeholder="03319235315"
                 className="w-full pl-10 pr-3 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-brand-800 focus:outline-none font-mono"
               />
               <Phone className="w-4 h-4 text-zinc-400 absolute left-3 top-3.5" />
