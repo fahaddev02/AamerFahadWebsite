@@ -1,3 +1,5 @@
+import './patch-fs.cjs';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -15,4 +17,3 @@ const nextConfig = {
 };
 
 export default nextConfig;
-
