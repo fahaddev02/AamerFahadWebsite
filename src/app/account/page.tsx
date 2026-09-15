@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { User, Package, MapPin, Heart, LogOut, ShieldCheck, Clock, CheckCircle } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
-import StatusBadge from '@/components/admin/StatusBadge';
+import StatusBadge from '@/components/ui/StatusBadge';
 import { Order } from '@/types/index';
 import { formatPKR, formatDate } from '@/lib/formatters';
 import { fetchApi } from '@/lib/api';
@@ -13,6 +13,7 @@ import { fetchApi } from '@/lib/api';
 export default function CustomerAccountPage() {
   const router = useRouter();
   const { user, token, logout, isAdmin, isLoading: isAuthLoading } = useAuth();
+  const adminUrl = process.env.NEXT_PUBLIC_ADMIN_URL || 'http://localhost:3001';
 
   const [orders, setOrders] = useState<Order[]>([]);
   const [isLoadingOrders, setIsLoadingOrders] = useState(true);
@@ -61,12 +62,14 @@ export default function CustomerAccountPage() {
 
         <div className="flex items-center gap-3">
           {isAdmin && (
-            <Link
-              href="/admin"
+            <a
+              href={adminUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 bg-brand-900 text-white text-xs font-bold rounded-xl shadow flex items-center gap-1.5"
             >
               <ShieldCheck className="w-4 h-4" /> Admin Portal
-            </Link>
+            </a>
           )}
           <button
             onClick={() => {

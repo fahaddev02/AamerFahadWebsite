@@ -174,13 +174,15 @@ export default function Header() {
                           </span>
                         </div>
                         {isAdmin && (
-                          <Link
-                            href="/admin"
+                          <a
+                            href={process.env.NEXT_PUBLIC_ADMIN_URL || 'http://localhost:3001'}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={() => setIsUserDropdownOpen(false)}
                             className="flex items-center gap-2 px-4 py-2.5 text-brand-800 hover:bg-brand-50 font-semibold transition"
                           >
-                            <ShieldCheck className="w-4 h-4" /> Admin Dashboard
-                          </Link>
+                            <ShieldCheck className="w-4 h-4" /> Admin Dashboard ↗
+                          </a>
                         )}
                         <Link
                           href="/account"
@@ -284,13 +286,15 @@ export default function Header() {
 
             <div className="mt-auto pt-6 border-t border-zinc-200 space-y-3">
               {isAdmin && (
-                <Link
-                  href="/admin"
+                <a
+                  href={process.env.NEXT_PUBLIC_ADMIN_URL || 'http://localhost:3001'}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="flex items-center gap-2 text-sm font-semibold text-brand-800 bg-brand-50 p-3 rounded-xl"
                 >
-                  <ShieldCheck className="w-5 h-5" /> Admin Control Panel
-                </Link>
+                  <ShieldCheck className="w-5 h-5" /> Admin Control Panel ↗
+                </a>
               )}
               {user ? (
                 <div className="space-y-2">

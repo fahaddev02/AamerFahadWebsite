@@ -36,11 +36,7 @@ export default function LoginPage() {
       login(res.token, res.user);
       showToast(`Welcome back, ${res.user.name}!`, 'success');
 
-      if (res.user.role === 'ADMIN') {
-        router.push('/admin');
-      } else {
-        router.push('/account');
-      }
+      router.push('/account');
     } else {
       setErrorMsg(res.message || 'Invalid email or password.');
       showToast(res.message || 'Login failed', 'error');
@@ -113,27 +109,7 @@ export default function LoginPage() {
         </form>
 
         {/* Quick Demo Credentials */}
-        <div className="p-4 bg-zinc-50 rounded-2xl border border-zinc-200/80 space-y-2 text-xs">
-          <p className="font-bold text-zinc-900 flex items-center gap-1.5 text-[11px] uppercase">
-            <ShieldCheck className="w-3.5 h-3.5 text-brand-800" /> Demo Credentials:
-          </p>
-          <div className="grid grid-cols-2 gap-2">
-            <button
-              type="button"
-              onClick={handleFillDemoAdmin}
-              className="py-1.5 px-2 bg-brand-50 hover:bg-brand-100 text-brand-900 font-semibold rounded-lg text-[11px] border border-brand-200"
-            >
-              Fill Admin Account
-            </button>
-            <button
-              type="button"
-              onClick={handleFillDemoCustomer}
-              className="py-1.5 px-2 bg-zinc-200 hover:bg-zinc-300 text-zinc-800 font-semibold rounded-lg text-[11px]"
-            >
-              Fill Customer Demo
-            </button>
-          </div>
-        </div>
+
 
         <div className="text-center text-xs text-zinc-500 pt-2 border-t border-zinc-100">
           Don't have an account?{' '}
