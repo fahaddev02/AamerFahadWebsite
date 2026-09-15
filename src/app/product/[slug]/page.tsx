@@ -25,7 +25,16 @@ import { formatPKR } from '@/lib/formatters';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import { useToast } from '@/context/ToastContext';
-import { fetchApi } from '@/lib/api';
+export function generateStaticParams() {
+  return [
+    { slug: 'signature-leather-tote' },
+    { slug: 'executive-briefcase' },
+    { slug: 'urban-leather-backpack' },
+    { slug: 'classic-bi-fold-wallet' },
+    { slug: 'crossbody-messenger-bag' },
+    { slug: 'weekend-duffle-bag' },
+  ];
+}
 
 export default function ProductDetailPage({ params }: { params: { slug: string } }) {
   const router = useRouter();

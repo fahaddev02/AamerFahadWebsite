@@ -8,6 +8,10 @@ import { Order } from '@/types';
 import { formatPKR, formatDate } from '@/lib/formatters';
 import { fetchApi } from '@/lib/api';
 
+export function generateStaticParams() {
+  return [{ id: 'demo' }];
+}
+
 export default function OrderSuccessPage({ params }: { params: { id: string } }) {
   const [order, setOrder] = useState<Order | null>(null);
   const [isLoading, setIsLoading] = useState(true);

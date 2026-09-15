@@ -10,6 +10,17 @@ interface Props {
   params: { slug: string };
 }
 
+export function generateStaticParams() {
+  return [
+    { slug: 'handbags' },
+    { slug: 'backpacks' },
+    { slug: 'laptop-bags' },
+    { slug: 'wallets' },
+    { slug: 'travel' },
+    { slug: 'accessories' },
+  ];
+}
+
 async function getCategoryData(slug: string) {
   const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
 
