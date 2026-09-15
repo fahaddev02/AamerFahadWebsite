@@ -5,12 +5,12 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ShieldCheck, Truck, Lock, ArrowRight, Banknote, AlertCircle } from 'lucide-react';
-import PakistaniCitySelect from '../../components/checkout/PakistaniCitySelect';
-import { useCart } from '../../context/CartContext';
-import { useAuth } from '../../context/AuthContext';
-import { useToast } from '../../context/ToastContext';
-import { formatPKR } from '../../lib/formatters';
-import { fetchApi } from '../../lib/api';
+import PakistaniCitySelect from '../../components/checkout/PakistaniCitySelect.js';
+import { useCart } from '../../context/CartContext.js';
+import { useAuth } from '../../context/AuthContext.js';
+import { useToast } from '../../context/ToastContext.js';
+import { formatPKR } from '../../lib/formatters.js';
+import { fetchApi } from '../../lib/api.js';
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -67,7 +67,7 @@ export default function CheckoutPage() {
     // Phone validation
     const phoneClean = formData.customerPhone.replace(/[\s-]/g, '');
     if (!/^(\+92|0|92)[0-9]{9,11}$/.test(phoneClean)) {
-      setErrorMessage('Please enter a valid Pakistani phone number (e.g. 03319235315 or +923319235315).');
+      setErrorMessage('Please enter a valid Pakistani phone number (e.g. 03001234567 or +923001234567).');
       showToast('Please enter a valid Pakistani phone number.', 'error');
       return;
     }
@@ -164,7 +164,7 @@ export default function CheckoutPage() {
                   required
                   value={formData.customerPhone}
                   onChange={(e) => setFormData({ ...formData, customerPhone: e.target.value })}
-                  placeholder="03319235315"
+                  placeholder="03001234567"
                   className="w-full bg-white border border-zinc-200 rounded-xl px-3.5 py-3 text-xs focus:ring-2 focus:ring-brand-800 focus:outline-none font-mono"
                 />
               </div>
