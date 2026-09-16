@@ -5,12 +5,12 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ShieldCheck, Truck, Lock, ArrowRight, Banknote, AlertCircle } from 'lucide-react';
-import PakistaniCitySelect from '../../components/checkout/PakistaniCitySelect.js';
-import { useCart } from '../../context/CartContext.js';
-import { useAuth } from '../../context/AuthContext.js';
-import { useToast } from '../../context/ToastContext.js';
-import { formatPKR } from '../../lib/formatters.js';
-import { fetchApi } from '../../lib/api.js';
+import PakistaniCitySelect from '../../components/checkout/PakistaniCitySelect';
+import { useCart } from '../../context/CartContext';
+import { useAuth } from '../../context/AuthContext';
+import { useToast } from '../../context/ToastContext';
+import { formatPKR } from '../../lib/formatters';
+import { fetchApi } from '../../lib/api';
 
 export default function CheckoutPage() {
   const router = useRouter();
