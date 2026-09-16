@@ -15,8 +15,9 @@ import {
 } from 'lucide-react';
 import ProductCard from '@/components/product/ProductCard';
 import { Product, Category } from '@/types';
+import { FALLBACK_CATEGORIES, FALLBACK_PRODUCTS } from '@/data/fallbackData';
 
-// Server-side fetching helper for Next.js SSR
+// Server-side fetching helper for Next.js Static Export / SSR
 async function getHomeData() {
   const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
 
@@ -31,10 +32,17 @@ async function getHomeData() {
     const featured: Product[] = (await featRes.json())?.data || [];
     const bestSellers: Product[] = (await bestRes.json())?.data || [];
 
-    return { categories, featured, bestSellers };
+    return {
+      categories: categories.length > 0 ? categories : FALLBACK_CATEGORIES,
+      featured: featured.length > 0 ? featured : FALLBACK_PRODUCTS.filter((p) => p.isFeatured),
+      bestSellers: bestSellers.length > 0 ? bestSellers : FALLBACK_PRODUCTS.filter((p) => p.isBestSeller),
+    };
   } catch (error) {
-    console.error('Error in getHomeData:', error);
-    return { categories: [], featured: [], bestSellers: [] };
+    return {
+      categories: FALLBACK_CATEGORIES,
+      featured: FALLBACK_PRODUCTS.filter((p) => p.isFeatured),
+      bestSellers: FALLBACK_PRODUCTS.filter((p) => p.isBestSeller),
+    };
   }
 }
 

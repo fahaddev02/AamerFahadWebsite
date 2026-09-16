@@ -60,6 +60,13 @@ jobs:
       - name: Build with Next.js
         run: npx next build
 
+      - name: Ensure GitHub Pages static files
+        run: |
+          touch ./out/.nojekyll
+          if [ -f "./public/404.html" ]; then
+            cp ./public/404.html ./out/404.html
+          fi
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

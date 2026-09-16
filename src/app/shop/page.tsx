@@ -6,16 +6,17 @@ import { SlidersHorizontal, ArrowUpDown, X, Search, RotateCcw } from 'lucide-rea
 import ProductGrid from '../../components/product/ProductGrid';
 import { Product, Category } from '../../types/index';
 import { fetchApi } from '../../lib/api';
+import { FALLBACK_CATEGORIES, FALLBACK_PRODUCTS } from '../../data/fallbackData';
 
 function ShopContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const [products, setProducts] = useState<Product[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [products, setProducts] = useState<Product[]>(FALLBACK_PRODUCTS);
+  const [categories, setCategories] = useState<Category[]>(FALLBACK_CATEGORIES);
+  const [isLoading, setIsLoading] = useState(false);
   const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
-  const [totalCount, setTotalCount] = useState(0);
+  const [totalCount, setTotalCount] = useState(FALLBACK_PRODUCTS.length);
 
   // Filter States
   const categoryParam = searchParams.get('category') || '';
@@ -45,7 +46,7 @@ function ShopContent() {
   // Load categories
   useEffect(() => {
     fetchApi<Category[]>('/categories').then((res) => {
-      if (res.success && res.data) {
+      if (res.success && res.data && res.data.length > 0) {
         setCategories(res.data);
       }
     });
@@ -64,15 +65,53 @@ function ShopContent() {
     if (maxPrice) params.set('maxPrice', maxPrice);
     if (inStockOnly) params.set('inStock', 'true');
 
-    fetchApi<Product[]>(`/products?${params.toString()}`).then((res) => {
-      if (isMounted) {
-        if (res.success && res.data) {
-          setProducts(res.data);
-          setTotalCount(res.pagination?.total || res.data.length);
+    fetchApi<Product[]>(`/products?${params.toString()}`)
+      .then((res) => {
+        if (isMounted) {
+          if (res.success && res.data && res.data.length > 0) {
+            setProducts(res.data);
+            setTotalCount(res.pagination?.total || res.data.length);
+          } else {
+            // Apply local filter on fallback products
+            let filtered = [...FALLBACK_PRODUCTS];
+            if (selectedCategory) {
+              const matchedCat = FALLBACK_CATEGORIES.find((c) => c.slug === selectedCategory || c.id === selectedCategory);
+              if (matchedCat) {
+                filtered = filtered.filter((p) => p.categoryId === matchedCat.id);
+              }
+            }
+            if (searchTerm) {
+              const term = searchTerm.toLowerCase();
+              filtered = filtered.filter(
+                (p) => p.name.toLowerCase().includes(term) || p.description.toLowerCase().includes(term)
+              );
+            }
+            setProducts(filtered);
+            setTotalCount(filtered.length);
+          }
+          setIsLoading(false);
         }
-        setIsLoading(false);
-      }
-    });
+      })
+      .catch(() => {
+        if (isMounted) {
+          let filtered = [...FALLBACK_PRODUCTS];
+          if (selectedCategory) {
+            const matchedCat = FALLBACK_CATEGORIES.find((c) => c.slug === selectedCategory || c.id === selectedCategory);
+            if (matchedCat) {
+              filtered = filtered.filter((p) => p.categoryId === matchedCat.id);
+            }
+          }
+          if (searchTerm) {
+            const term = searchTerm.toLowerCase();
+            filtered = filtered.filter(
+              (p) => p.name.toLowerCase().includes(term) || p.description.toLowerCase().includes(term)
+            );
+          }
+          setProducts(filtered);
+          setTotalCount(filtered.length);
+          setIsLoading(false);
+        }
+      });
 
     return () => {
       isMounted = false;

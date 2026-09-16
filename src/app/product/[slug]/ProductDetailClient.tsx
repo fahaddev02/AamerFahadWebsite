@@ -26,29 +26,43 @@ import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import { useToast } from '@/context/ToastContext';
 import { fetchApi } from '@/lib/api';
+import { getFallbackProduct } from '@/data/fallbackData';
 
-export default function ProductDetailClient({ slug }: { slug: string }) {
+interface ProductDetailClientProps {
+  slug: string;
+  initialProduct?: Product | null;
+}
+
+export default function ProductDetailClient({ slug, initialProduct }: ProductDetailClientProps) {
   const router = useRouter();
   const { addItem } = useCart();
   const { isInWishlist, toggleWishlist } = useWishlist();
   const { showToast } = useToast();
 
-  const [product, setProduct] = useState<Product | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(null);
+  const fallback = initialProduct || getFallbackProduct(slug);
+  const [product, setProduct] = useState<Product | null>(fallback);
+  const [isLoading, setIsLoading] = useState(!fallback);
+  const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(
+    fallback?.variants && fallback.variants.length > 0 ? fallback.variants[0] : null
+  );
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<'description' | 'specs' | 'shipping'>('description');
 
   const loadProduct = async () => {
-    setIsLoading(true);
-    const res = await fetchApi<Product>(`/products/${slug}`);
-    if (res.success && res.data) {
-      setProduct(res.data);
-      if (res.data.variants && res.data.variants.length > 0) {
-        setSelectedVariant(res.data.variants[0]);
+    let isMounted = true;
+    try {
+      const res = await fetchApi<Product>(`/products/${slug}`);
+      if (res.success && res.data) {
+        setProduct(res.data);
+        if (res.data.variants && res.data.variants.length > 0) {
+          setSelectedVariant(res.data.variants[0]);
+        }
       }
+    } catch {
+      // Keep fallback
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -72,7 +86,24 @@ export default function ProductDetailClient({ slug }: { slug: string }) {
   }
 
   if (!product) {
-    return notFound();
+    return (
+      <div className="max-w-3xl mx-auto px-4 py-20 text-center space-y-6">
+        <div className="w-16 h-16 bg-zinc-100 rounded-full flex items-center justify-center mx-auto text-zinc-400">
+          <ShoppingBag className="w-8 h-8" />
+        </div>
+        <h1 className="text-2xl font-serif font-black text-zinc-900">Product Not Found</h1>
+        <p className="text-xs text-zinc-500 max-w-sm mx-auto">
+          The requested luxury item is currently unavailable or may have been updated in our catalogue.
+        </p>
+        <Link
+          href="/shop"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-brand-900 text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-md hover:bg-brand-800 transition"
+        >
+          <span>Browse All Bags & Accessories</span>
+          <ChevronRight className="w-4 h-4" />
+        </Link>
+      </div>
+    );
   }
 
   const currentPrice = selectedVariant?.price || product.salePrice || product.price;

@@ -6,6 +6,7 @@ import { Search as SearchIcon, ArrowRight } from 'lucide-react';
 import ProductGrid from '../../components/product/ProductGrid';
 import { Product } from '../../types/index';
 import { fetchApi } from '../../lib/api';
+import { FALLBACK_PRODUCTS } from '../../data/fallbackData';
 
 function SearchContent() {
   const router = useRouter();
@@ -14,7 +15,7 @@ function SearchContent() {
 
   const [searchInput, setSearchInput] = useState(query);
   const [products, setProducts] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setSearchInput(query);
@@ -25,12 +26,34 @@ function SearchContent() {
     }
 
     setIsLoading(true);
-    fetchApi<Product[]>(`/products?search=${encodeURIComponent(query)}`).then((res) => {
-      if (res.success && res.data) {
-        setProducts(res.data);
-      }
-      setIsLoading(false);
-    });
+    fetchApi<Product[]>(`/products?search=${encodeURIComponent(query)}`)
+      .then((res) => {
+        if (res.success && res.data && res.data.length > 0) {
+          setProducts(res.data);
+        } else {
+          const q = query.toLowerCase();
+          const filtered = FALLBACK_PRODUCTS.filter(
+            (p) =>
+              p.name.toLowerCase().includes(q) ||
+              p.description.toLowerCase().includes(q) ||
+              p.sku.toLowerCase().includes(q)
+          );
+          setProducts(filtered);
+        }
+      })
+      .catch(() => {
+        const q = query.toLowerCase();
+        const filtered = FALLBACK_PRODUCTS.filter(
+          (p) =>
+            p.name.toLowerCase().includes(q) ||
+            p.description.toLowerCase().includes(q) ||
+            p.sku.toLowerCase().includes(q)
+        );
+        setProducts(filtered);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, [query]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {

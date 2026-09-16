@@ -1,12 +1,12 @@
 import './patch-fs.cjs';
 
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
-let basePath = '';
-let assetPrefix = '';
+let basePath = process.env.BASE_PATH || process.env.NEXT_PUBLIC_BASE_PATH || '';
+let assetPrefix = basePath ? `${basePath}/` : '';
 
-if (isGithubActions) {
+if (!basePath && isGithubActions) {
   const repo = process.env.GITHUB_REPOSITORY?.replace(/.*?\//, '') || '';
-  if (repo) {
+  if (repo && !repo.endsWith('.github.io')) {
     basePath = `/${repo}`;
     assetPrefix = `/${repo}/`;
   }
@@ -14,7 +14,7 @@ if (isGithubActions) {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: isGithubActions ? 'export' : undefined,
+  output: 'export',
   basePath: basePath || undefined,
   assetPrefix: assetPrefix || undefined,
   trailingSlash: true,

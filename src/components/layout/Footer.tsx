@@ -127,6 +127,7 @@ export default function Footer() {
           <h4 className="text-xs font-bold text-white uppercase tracking-widest">Customer Care</h4>
           <ul className="space-y-2 text-xs">
             <li><Link href="/shop" className="text-zinc-400 hover:text-white transition">All Products</Link></li>
+            <li><Link href="/about" className="text-zinc-400 hover:text-white transition">About Aamer Fahad</Link></li>
             <li><Link href="/cart" className="text-zinc-400 hover:text-white transition">View Shopping Cart</Link></li>
             <li><Link href="/wishlist" className="text-zinc-400 hover:text-white transition">My Wishlist</Link></li>
             <li><Link href="/account" className="text-zinc-400 hover:text-white transition">Track Order</Link></li>
