@@ -22,8 +22,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const storedToken = localStorage.getItem('zavier_auth_token');
-    const storedUser = localStorage.getItem('zavier_auth_user');
+    const storedToken = localStorage.getItem('aamerfahad_auth_token');
+    const storedUser = localStorage.getItem('aamerfahad_auth_user');
 
     if (storedToken && storedUser) {
       try {
@@ -39,15 +39,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const login = (newToken: string, newUser: User) => {
     setToken(newToken);
     setUser(newUser);
-    localStorage.setItem('zavier_auth_token', newToken);
-    localStorage.setItem('zavier_auth_user', JSON.stringify(newUser));
+    localStorage.setItem('aamerfahad_auth_token', newToken);
+    localStorage.setItem('aamerfahad_auth_user', JSON.stringify(newUser));
   };
 
   const logout = () => {
     setToken(null);
     setUser(null);
-    localStorage.removeItem('zavier_auth_token');
-    localStorage.removeItem('zavier_auth_user');
+    localStorage.removeItem('aamerfahad_auth_token');
+    localStorage.removeItem('aamerfahad_auth_user');
   };
 
   const refreshProfile = async () => {
@@ -55,7 +55,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const res = await fetchApi<{ user: User }>('/auth/profile');
     if (res.success && res.data?.user) {
       setUser(res.data.user);
-      localStorage.setItem('zavier_auth_user', JSON.stringify(res.data.user));
+      localStorage.setItem('aamerfahad_auth_user', JSON.stringify(res.data.user));
     }
   };
 

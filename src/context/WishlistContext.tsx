@@ -18,7 +18,7 @@ export function WishlistProvider({ children }: { children: React.ReactNode }) {
   const { showToast } = useToast();
 
   useEffect(() => {
-    const saved = localStorage.getItem('zavier_wishlist');
+    const saved = localStorage.getItem('aamerfahad_wishlist');
     if (saved) {
       try {
         setWishlist(JSON.parse(saved));
@@ -29,7 +29,7 @@ export function WishlistProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('zavier_wishlist', JSON.stringify(wishlist));
+    localStorage.setItem('aamerfahad_wishlist', JSON.stringify(wishlist));
   }, [wishlist]);
 
   const isInWishlist = (productId: string) => {

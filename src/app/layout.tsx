@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
-import './globals.css';
 import { ToastProvider } from '@/context/ToastContext';
 import { AuthProvider } from '@/context/AuthContext';
 import { CartProvider } from '@/context/CartContext';
@@ -23,7 +22,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Zavier Lifestyle | Premium Handbags, Backpacks, Laptop Bags & Wallets in Pakistan',
+  title: 'Aamer Fahad | Premium Handbags, Backpacks, Laptop Bags & Wallets in Pakistan',
   description:
     'Discover luxury handbags, executive laptop bags, waterproof backpacks, and genuine leather wallets crafted for modern elegance. Cash on Delivery across Pakistan.',
   keywords: [
@@ -32,10 +31,10 @@ export const metadata: Metadata = {
     'laptop bags karachi',
     'backpacks lahore',
     'cash on delivery bags',
-    'zavier lifestyle',
+    'aamer fahad',
   ],
   openGraph: {
-    title: 'Zavier Lifestyle | Premium Pakistani E-Commerce',
+    title: 'Aamer Fahad | Premium Pakistani E-Commerce',
     description: 'Handcrafted luxury leather goods, bags, and accessories in Pakistan.',
     type: 'website',
     locale: 'en_PK',

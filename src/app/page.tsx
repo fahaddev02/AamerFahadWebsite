@@ -103,7 +103,7 @@ export default async function HomePage() {
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-zinc-800/60">
                 <Image
                   src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1200&q=80"
-                  alt="Zavier Signature Luxury Handbag"
+                  alt="Aamer Fahad Signature Luxury Handbag"
                   fill
                   priority
                   className="object-cover object-center"
@@ -253,8 +253,8 @@ export default async function HomePage() {
       {/* 5. Promotional Callout Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative bg-gradient-to-r from-brand-950 via-brand-900 to-zinc-950 rounded-3xl p-8 sm:p-12 overflow-hidden text-white shadow-2xl">
-          <div className="absolute -right-10 -bottom-10 opacity-10 font-serif text-[180px] font-black pointer-events-none select-none">
-            ZAVIER
+          <div className="absolute -right-10 -bottom-10 opacity-10 font-serif text-[120px] sm:text-[160px] font-black pointer-events-none select-none tracking-widest">
+            AAMER FAHAD
           </div>
 
           <div className="relative max-w-2xl space-y-4">
@@ -310,7 +310,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
             <span className="text-xs font-bold uppercase tracking-widest text-brand-800">
-              The Zavier Difference
+              The Aamer Fahad Difference
             </span>
             <h2 className="text-2xl sm:text-3xl font-serif font-black text-zinc-950">
               Built for Style, Engineered for Durability
@@ -418,7 +418,7 @@ export default async function HomePage() {
         <div className="bg-brand-900 text-white rounded-3xl p-8 sm:p-12 text-center max-w-3xl mx-auto space-y-6 shadow-xl">
           <div className="space-y-2">
             <span className="text-xs uppercase tracking-widest text-gold-400 font-bold">
-              Join the Zavier Circle
+              Join the Aamer Fahad Circle
             </span>
             <h2 className="text-2xl sm:text-3xl font-serif font-black">
               Get 10% Off Your First Order

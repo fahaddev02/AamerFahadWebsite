@@ -43,8 +43,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   // Load cart from localStorage
   useEffect(() => {
-    const savedCart = localStorage.getItem('zavier_cart_items');
-    const savedCoupon = localStorage.getItem('zavier_cart_coupon');
+    const savedCart = localStorage.getItem('aamerfahad_cart_items');
+    const savedCoupon = localStorage.getItem('aamerfahad_cart_coupon');
 
     if (savedCart) {
       try {
@@ -75,14 +75,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   // Sync to localStorage
   useEffect(() => {
-    localStorage.setItem('zavier_cart_items', JSON.stringify(items));
+    localStorage.setItem('aamerfahad_cart_items', JSON.stringify(items));
   }, [items]);
 
   useEffect(() => {
     if (appliedCoupon) {
-      localStorage.setItem('zavier_cart_coupon', JSON.stringify(appliedCoupon));
+      localStorage.setItem('aamerfahad_cart_coupon', JSON.stringify(appliedCoupon));
     } else {
-      localStorage.removeItem('zavier_cart_coupon');
+      localStorage.removeItem('aamerfahad_cart_coupon');
     }
   }, [appliedCoupon]);
 
@@ -156,8 +156,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const clearCart = () => {
     setItems([]);
     setAppliedCoupon(null);
-    localStorage.removeItem('zavier_cart_items');
-    localStorage.removeItem('zavier_cart_coupon');
+    localStorage.removeItem('aamerfahad_cart_items');
+    localStorage.removeItem('aamerfahad_cart_coupon');
   };
 
   const applyCouponCode = async (code: string): Promise<boolean> => {

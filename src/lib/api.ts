@@ -15,7 +15,7 @@ export async function fetchApi<T = any>(
   endpoint: string,
   options: RequestInit = {}
 ): Promise<ApiResponse<T>> {
-  const token = typeof window !== 'undefined' ? localStorage.getItem('zavier_auth_token') : null;
+  const token = typeof window !== 'undefined' ? localStorage.getItem('aamerfahad_auth_token') : null;
 
   const headers: HeadersInit = {
     'Content-Type': 'application/json',
