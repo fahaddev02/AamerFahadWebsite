@@ -94,8 +94,8 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 4.9,
     reviewCount: 42,
     images: [
-      { id: 'img-1-1', url: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
-      { id: 'img-1-2', url: 'https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=800&q=80', isPrimary: false, sortOrder: 2 },
+      { id: 'img-1-1', url: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
+      { id: 'img-1-2', url: 'https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=800&q=80', isMain: false, sortOrder: 2 },
     ],
     category: FALLBACK_CATEGORIES[0],
     variants: [
@@ -121,7 +121,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 4.8,
     reviewCount: 29,
     images: [
-      { id: 'img-2-1', url: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-2-1', url: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[0],
     variants: [],
@@ -144,7 +144,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 4.7,
     reviewCount: 38,
     images: [
-      { id: 'img-3-1', url: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-3-1', url: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[0],
     variants: [],
@@ -167,7 +167,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 4.9,
     reviewCount: 19,
     images: [
-      { id: 'img-4-1', url: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-4-1', url: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[0],
     variants: [],
@@ -190,7 +190,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 4.9,
     reviewCount: 64,
     images: [
-      { id: 'img-5-1', url: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-5-1', url: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[1],
     variants: [],
@@ -213,7 +213,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 4.8,
     reviewCount: 31,
     images: [
-      { id: 'img-6-1', url: 'https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-6-1', url: 'https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[1],
     variants: [],
@@ -236,7 +236,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 4.7,
     reviewCount: 16,
     images: [
-      { id: 'img-7-1', url: 'https://images.unsplash.com/photo-1546938576-6e6a64f317cc?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-7-1', url: 'https://images.unsplash.com/photo-1546938576-6e6a64f317cc?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[1],
     variants: [],
@@ -259,7 +259,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 5.0,
     reviewCount: 52,
     images: [
-      { id: 'img-8-1', url: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-8-1', url: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[2],
     variants: [],
@@ -282,7 +282,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 4.8,
     reviewCount: 27,
     images: [
-      { id: 'img-9-1', url: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-9-1', url: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[2],
     variants: [],
@@ -305,7 +305,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 4.9,
     reviewCount: 95,
     images: [
-      { id: 'img-10-1', url: 'https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-10-1', url: 'https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[3],
     variants: [],
@@ -328,7 +328,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 4.7,
     reviewCount: 22,
     images: [
-      { id: 'img-11-1', url: 'https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-11-1', url: 'https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[3],
     variants: [],
@@ -351,7 +351,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 4.8,
     reviewCount: 34,
     images: [
-      { id: 'img-12-1', url: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-12-1', url: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[3],
     variants: [],
@@ -374,7 +374,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 5.0,
     reviewCount: 47,
     images: [
-      { id: 'img-13-1', url: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-13-1', url: 'https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[4],
     variants: [],
@@ -397,7 +397,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 4.8,
     reviewCount: 14,
     images: [
-      { id: 'img-14-1', url: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-14-1', url: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[4],
     variants: [],
@@ -420,7 +420,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 4.9,
     reviewCount: 23,
     images: [
-      { id: 'img-15-1', url: 'https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-15-1', url: 'https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[5],
     variants: [],
@@ -443,7 +443,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 4.8,
     reviewCount: 51,
     images: [
-      { id: 'img-16-1', url: 'https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-16-1', url: 'https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[5],
     variants: [],
@@ -466,7 +466,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     rating: 4.7,
     reviewCount: 18,
     images: [
-      { id: 'img-17-1', url: 'https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=800&q=80', isPrimary: true, sortOrder: 1 },
+      { id: 'img-17-1', url: 'https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=800&q=80', isMain: true, sortOrder: 1 },
     ],
     category: FALLBACK_CATEGORIES[5],
     variants: [],
