@@ -91,6 +91,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: true,
     isBestSeller: true,
     isNewArrival: false,
+    isPublished: true,
     rating: 4.9,
     reviewCount: 42,
     images: [
@@ -118,6 +119,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: true,
     isBestSeller: false,
     isNewArrival: true,
+    isPublished: true,
     rating: 4.8,
     reviewCount: 29,
     images: [
@@ -141,6 +143,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: false,
     isBestSeller: true,
     isNewArrival: false,
+    isPublished: true,
     rating: 4.7,
     reviewCount: 38,
     images: [
@@ -164,6 +167,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: true,
     isBestSeller: false,
     isNewArrival: true,
+    isPublished: true,
     rating: 4.9,
     reviewCount: 19,
     images: [
@@ -187,6 +191,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: true,
     isBestSeller: true,
     isNewArrival: false,
+    isPublished: true,
     rating: 4.9,
     reviewCount: 64,
     images: [
@@ -210,6 +215,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: false,
     isBestSeller: true,
     isNewArrival: false,
+    isPublished: true,
     rating: 4.8,
     reviewCount: 31,
     images: [
@@ -233,6 +239,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: true,
     isBestSeller: false,
     isNewArrival: true,
+    isPublished: true,
     rating: 4.7,
     reviewCount: 16,
     images: [
@@ -256,6 +263,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: true,
     isBestSeller: true,
     isNewArrival: false,
+    isPublished: true,
     rating: 5.0,
     reviewCount: 52,
     images: [
@@ -279,6 +287,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: false,
     isBestSeller: true,
     isNewArrival: false,
+    isPublished: true,
     rating: 4.8,
     reviewCount: 27,
     images: [
@@ -302,6 +311,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: true,
     isBestSeller: true,
     isNewArrival: false,
+    isPublished: true,
     rating: 4.9,
     reviewCount: 95,
     images: [
@@ -325,6 +335,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: false,
     isBestSeller: false,
     isNewArrival: true,
+    isPublished: true,
     rating: 4.7,
     reviewCount: 22,
     images: [
@@ -348,6 +359,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: true,
     isBestSeller: false,
     isNewArrival: true,
+    isPublished: true,
     rating: 4.8,
     reviewCount: 34,
     images: [
@@ -371,6 +383,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: true,
     isBestSeller: true,
     isNewArrival: false,
+    isPublished: true,
     rating: 5.0,
     reviewCount: 47,
     images: [
@@ -394,6 +407,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: false,
     isBestSeller: false,
     isNewArrival: true,
+    isPublished: true,
     rating: 4.8,
     reviewCount: 14,
     images: [
@@ -417,6 +431,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: true,
     isBestSeller: false,
     isNewArrival: true,
+    isPublished: true,
     rating: 4.9,
     reviewCount: 23,
     images: [
@@ -440,6 +455,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: false,
     isBestSeller: true,
     isNewArrival: false,
+    isPublished: true,
     rating: 4.8,
     reviewCount: 51,
     images: [
@@ -463,6 +479,7 @@ export const FALLBACK_PRODUCTS: Product[] = [
     isFeatured: false,
     isBestSeller: false,
     isNewArrival: true,
+    isPublished: true,
     rating: 4.7,
     reviewCount: 18,
     images: [

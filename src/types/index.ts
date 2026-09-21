@@ -54,6 +54,7 @@ export interface Product {
   tags?: string | null;
   isFeatured: boolean;
   isBestSeller: boolean;
+  isNewArrival?: boolean;
   isPublished: boolean;
   specifications?: string | null;
   categoryId: string;
