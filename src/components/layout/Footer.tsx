@@ -71,11 +71,8 @@ export default function Footer() {
             <img
               src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logo.png`}
               alt="Aamer Fahad Logo"
-              className="h-10 w-auto object-contain brightness-0 invert"
+              className="h-16 md:h-20 w-auto object-contain brightness-0 invert"
             />
-            <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-gold-400">
-              Lifestyle • Pakistan
-            </p>
           </Link>
           <p className="text-xs text-zinc-400 leading-relaxed max-w-sm">
             Aamer Fahad is a premium Pakistani brand delivering handcrafted leather accessories, luxury handbags, executive laptop bags, backpacks, and minimalist wallets designed for elegance, durability, and function.
