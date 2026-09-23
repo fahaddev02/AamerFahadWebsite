@@ -89,10 +89,12 @@ export default function Header() {
           {/* Center: Prominent Brand Logo */}
           <div className="flex flex-col items-center justify-center text-center px-4">
             <Link href="/" className="group flex flex-col items-center">
-              <span className="text-2xl sm:text-3xl md:text-4xl font-serif font-black tracking-[0.25em] text-zinc-950 group-hover:text-brand-800 transition duration-300">
-                AAMER FAHAD
-              </span>
-              <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.35em] font-semibold text-zinc-400 mt-0.5 group-hover:text-brand-600 transition">
+              <img
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logo.png`}
+                alt="Aamer Fahad Logo"
+                className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition duration-300"
+              />
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.35em] font-semibold text-zinc-400 mt-1 group-hover:text-brand-600 transition">
                 Lifestyle • Pakistan
               </span>
             </Link>

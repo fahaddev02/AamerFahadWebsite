@@ -67,10 +67,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
         {/* Brand Column */}
         <div className="lg:col-span-2 space-y-4">
-          <Link href="/" className="inline-block">
-            <span className="text-3xl font-serif font-black tracking-widest text-white">
-              AAMER FAHAD
-            </span>
+          <Link href="/" className="inline-block space-y-1">
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logo.png`}
+              alt="Aamer Fahad Logo"
+              className="h-10 w-auto object-contain brightness-0 invert"
+            />
             <p className="text-[10px] uppercase tracking-[0.3em] font-semibold text-gold-400">
               Lifestyle • Pakistan
             </p>
